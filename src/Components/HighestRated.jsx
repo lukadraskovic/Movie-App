@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function HighestRated() {
+function HighestRated({getMovieData,getMovieDetails}) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -20,8 +20,8 @@ function HighestRated() {
 
   return (
     <div className="container">
-      {/* <div className="row">
-        {sortedMovies.map((movie) => (
+      <div className="row">
+        {/* {sortedMovies.map((movie) => (
           <div className="col-md-4" key={movie.imdbID}>
             <div className="card">
               <img src={movie.Poster} className="card-img-top" alt={movie.Title} />
@@ -31,9 +31,9 @@ function HighestRated() {
               </div>
             </div>
           </div>
-        ))}
-      </div> */}
-      <p>12312312312</p>
+        ))} */}
+        1231123123123123
+      </div>
     </div>
   );
 }

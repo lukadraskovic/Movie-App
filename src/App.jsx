@@ -19,7 +19,7 @@ function App() {
     inputRef.current.focus();
   };
     const getMovieData = async (searchInput) => {
-    const url = `http://www.omdbapi.com/?apikey=7e698aea&s=${searchInput}`;
+    const url = `https://www.omdbapi.com/?apikey=7e698aea&s=${searchInput}`;
     const response = await fetch(url);
     const responseJSON = await response.json();
 
@@ -31,7 +31,7 @@ function App() {
   };
 
   const getSimilarMovieData = async (movie) => {
-    const url = ` http://www.omdbapi.com/?apikey=7e698aea&s=${movie.Title}`;
+    const url = ` https://www.omdbapi.com/?apikey=7e698aea&s=${movie.Title}`;
     const response = await fetch(url);
     const responseJSON = await response.json();
 
@@ -41,7 +41,7 @@ function App() {
   };
 
   const getMovieDetails = async (id) => {
-    const url = `http://www.omdbapi.com/?apikey=7e698aea&i=${id}`;
+    const url = `https://www.omdbapi.com/?apikey=7e698aea&i=${id}`;
     const response = await fetch(url);
     const responseJSON = await response.json();
     return responseJSON;
@@ -86,6 +86,11 @@ function App() {
             )
           }
         />
+<Route
+  path="/highest-rated"
+  element={<HighestRated getMovieDetails={getMovieDetails} getMovieData={getMovieData} />}
+/>
+
       </Routes>
       <Footer />
     </Router>
