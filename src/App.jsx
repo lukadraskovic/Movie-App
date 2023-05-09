@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyNavbar from "./Components/MyNavbar";
 import MovieResults from "./Components/MovieResults";
@@ -13,6 +13,11 @@ function App() {
   const [similarMovies, setSimilarMovies] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showResults, setShowResults] = useState(false);
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
     const getMovieData = async (searchInput) => {
     const url = `http://www.omdbapi.com/?apikey=7e698aea&s=${searchInput}`;
     const response = await fetch(url);
@@ -63,6 +68,7 @@ function App() {
         searchInput={searchInput}
         setSearchInput={setSearchInput}
         getMovieData={getMovieData}
+        inputRef={inputRef}
       />
       <Routes>
         <Route
@@ -76,7 +82,7 @@ function App() {
                 getMovieDetails={getMovieDetails}
               />
             ) : (
-              <Home/>
+              <Home handleClick={handleClick}/>
             )
           }
         />

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import heroIlustration from "../Images/hero-section-ilustration.png";
 
-function Home({handleClick, inputRef}) {
+function Home({handleClick}) {
   const subtitle = {
     maxWidth: 450,
     marginTop: 10,
@@ -22,7 +22,7 @@ function Home({handleClick, inputRef}) {
               </p>
               <div className="d-flex">
                 <div className="p-2">
-                  <button className="btn btn-primary" onClick={handleClick}>
+                  <button className="btn btn-primary explorebtn transition" onClick={handleClick}>
                     Explore the Platform
                   </button>
                 </div>

@@ -30,6 +30,7 @@ function MyNavbar({searchInput, setSearchInput, inputRef}) {
           aria-label="Search"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
+          ref={inputRef}
         />
       </form>
       <div class="collapse navbar-collapse justify-content-center">
