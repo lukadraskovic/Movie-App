@@ -9,7 +9,7 @@ function SimilarMovies({ movies, getMovieDetails}) {
   return (
     <div className='container-fluid'>
       <div className="">
-      <h2 className='text-center title text-white fs-1 py-2 border border-bottom'>Similar movies</h2>
+      <h2 className='text-center text-white fs-1 py-2'>Similar movies</h2>
       </div>
       <div className='row'>
         {movies.map((movie) => (

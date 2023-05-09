@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useRef} from "react";
 import { Link } from "react-router-dom";
 import "../index.css";
-function MyNavbar(props) {
-  const { searchInput, setSearchInput } = props;
+function MyNavbar({searchInput, setSearchInput, inputRef}) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   return (
     <nav className="navbar px-4 navbar-expand-lg navbar-dark shadow bg-custom-dark">
       <a className="navbar-brand p-2" href="/">
@@ -33,7 +33,7 @@ function MyNavbar(props) {
         />
       </form>
       <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item active">
             <a class="nav-link bold color-primary" href="/">
               Home
