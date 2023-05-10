@@ -31,6 +31,7 @@ const MovieDetails = () => {
       <p>Plot : {movie.Plot}</p>
       <p>Actors : {movie.Actors}</p>
         <p>Runtime : {movie.Runtime}</p>
+        <p>Writer : {movie.Writer}</p>
         <p>IMDB : {movie.imdbRating}</p>
         </div>
     </div>
