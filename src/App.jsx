@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import Popular from "./Components/Popular";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HighestRated from "./Components/HighestRated";
+import MovieDetails from "./Components/MovieDetails";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -95,6 +96,7 @@ function App() {
   path="/popular"
   element={<Popular movies={movies} getMovieDetails={getMovieDetails}/>}
 />
+<Route path="/movie/:imdbID" Component={MovieDetails}/>
       </Routes>
       <Footer />
     </Router>

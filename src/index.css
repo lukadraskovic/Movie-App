@@ -88,3 +88,6 @@ body {
 .modal-transparent:hover{
   cursor: pointer;
 }
+.movie-link{
+  text-decoration: none !important;
+}

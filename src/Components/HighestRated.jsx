@@ -1,29 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
+import '../index.css';
 const HighestRated = () => {
   const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  const [showModal, setShowModal] = useState(false);
-  const [movieDetails, setMovieDetails] = useState(null);
 
   const fetchMovieData = async (title) => {
     const apiKey = "7e698aea";
     const response = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
     const movieData = await response.json();
     return movieData;
-  };
-
-  const handleShowMore = async (movie) => {
-    setSelectedMovie(movie);
-    setShowModal(true);
-    const movieData = await fetchMovieData(movie.Title);
-    setMovieDetails(movieData);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
   };
 
   useEffect(() => {
@@ -48,89 +33,38 @@ const HighestRated = () => {
 
     fetchMovies();
   }, []);
+
   return (
     <div className="container">
       <div className="row">
         <h2 className="text-light p-2 my-4">Highest Rated Movies:</h2>
-        <p className="text-light">Highest rated movies are the cream of the crop in the world of cinema, representing the pinnacle of storytelling, acting, and filmmaking. These movies have captivated audiences and critics alike, standing the test of time and leaving an indelible mark on the film industry. With exceptional narratives, memorable characters, and masterful direction, highest rated movies have the power to transport viewers to different worlds, evoke a range of emotions, and provoke thought-provoking discussions. From timeless classics like "The Shawshank Redemption" and "The Godfather" to modern masterpieces like "The Dark Knight" and "Inception," these films have earned their acclaim through their exceptional craftsmanship, compelling narratives, and their ability to resonate with audiences across generations. Highest rated movies not only entertain but also inspire, challenge conventions, and leave a lasting impact on those fortunate enough to experience them.</p>
+        <p className="text-light">
+          Highest rated movies are the cream of the crop in the world of cinema, representing the pinnacle of storytelling, acting, and filmmaking. These movies have captivated audiences and critics alike, standing the test of time and leaving an indelible mark on the film industry. With exceptional narratives, memorable characters, and masterful direction, highest rated movies have the power to transport viewers to different worlds, evoke a range of emotions, and provoke thought-provoking discussions. From timeless classics like "The Shawshank Redemption" and "The Godfather" to modern masterpieces like "The Dark Knight" and "Inception," these films have earned their acclaim through their exceptional craftsmanship, compelling narratives, and their ability to resonate with audiences across generations. Highest rated movies not only entertain but also inspire, challenge conventions, and leave a lasting impact on those fortunate enough to experience them.
+        </p>
         {movies.map((movie) => (
           <div className="col-md-3" key={movie.imdbID}>
-            <div className="card shadow-sm my-2 bg-transparent">
-              <img className="bd-placeholder-img card-img-top" width="100%" height="225px" src={movie.Poster} alt={movie.Title} />
-              <div className="card-body bg-transparent">
-                <p className="card-text text-white">
-                  {movie.Title.length > 20 ? `${movie.Title.substring(0, 20)}...` : movie.Title}
-                </p>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div className="btn-group">
-                    <button type="button" className="btn btn-sm btn-outline-secondary">
-                      {movie.Type === "movie" ? "Movie" : "TV"}
-                    </button>
-                    <button type="button" className="btn btn-sm btn-outline-secondary" onClick={() => handleShowMore(movie)}>
-                      Show More
-                    </button>
+            <Link to={`/movie/${movie.imdbID}`} className="movie-link">
+              <div className="card shadow-sm my-2 bg-transparent">
+                <img className="bd-placeholder-img card-img-top" width="100%" height="225px" src={movie.Poster} alt={movie.Title} />
+                <div className="card-body bg-transparent">
+                  <p className="card-text text-white">
+                    {movie.Title.length > 20 ? `${movie.Title.substring(0, 20)}...` : movie.Title}
+                  </p>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="btn-group">
+                      <button type="button" className="btn btn-sm btn-outline-secondary">
+                        {movie.Type === "movie" ? "Movie" : "TV"}
+                      </button>
+                    </div>
+                    <small className="text-muted text-white">{movie.Year}</small>
                   </div>
-                  <small className="text-muted text-white">{movie.Year}</small>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
-        {selectedMovie && (
-          <Modal show={showModal} onHide={handleCloseModal} className="modal-transparent">
-            <Modal.Body>
-              <Modal.Header closeButton>
-                <Modal.Title>
-                  {selectedMovie ? selectedMovie.Title : "Loading..."}
-                </Modal.Title>
-              </Modal.Header>
-              {selectedMovie && (
-                <div className="d-flex justify-content-between">
-                  <img
-                    src={selectedMovie.Poster}
-                    alt="unavailable"
-                    className="mr-4 modal-pic"
-                  />
-                  <div className="mx-5 h-100 pt-2">
-                  <p className="border-bottom border-bottom-md-primary">
-                      Year: {selectedMovie.Year}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Rated: {selectedMovie.Rated}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Released: {selectedMovie.Released}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Runtime: {selectedMovie.Runtime}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Genre: {selectedMovie.Genre}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Director: {selectedMovie.Director}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Writer: {selectedMovie.Writer}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Actors: {selectedMovie.Actors}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Plot: {selectedMovie.Plot}
-                    </p>
-                    <p className="border-bottom border-bottom-md-primary">
-                      Rating: {selectedMovie.imdbRating}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </Modal.Body>
-          </Modal>
-        )}
-      </div>
+     </div>
     </div>
   );
 };
-
 export default HighestRated;
