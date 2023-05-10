@@ -39,7 +39,7 @@ const Popular = ({ getMovieDetails, movie }) => {
 
   return (
     <div className="container">
-      <h2 className="text-light p-2">Popular this week:</h2>
+      <h2 className="text-light p-2 my-4">Popular this week:</h2>
       <p className="p-2 text-light">
         The release of "John Wick 4" has not only elevated the popularity of its
         predecessors but has also breathed new life into the earlier films. As
