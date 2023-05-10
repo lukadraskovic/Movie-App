@@ -78,12 +78,6 @@ const Popular = ({ getMovieDetails, movie }) => {
                       >
                         {movie.Type === "movie" ? "Movie" : "TV"}
                       </button>
-                      <button
-                        type="button"
-                        className="btn btn-sm btn-outline-secondary"
-                      >
-                        Show More
-                      </button>
                     </div>
                     <small className="text-muted text-white">
                       {movie.Year}

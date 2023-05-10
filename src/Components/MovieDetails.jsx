@@ -17,13 +17,13 @@ const MovieDetails = () => {
   }, []);
 
   if (!movie) {
-    return <div>Loading...</div>;
+    return <div className="text-light">Loading...</div>;
   }
 
   return (
     <div className="text-light d-flex">
         <img src={movie.Poster} alt={movie.Title} className="px-2 m-3" />
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column px-2">
       <h2 className="px-2 my-2">{movie.Title}</h2>
       <p>Year: {movie.Year}</p>
       <p>Genre: {movie.Genre}</p>
