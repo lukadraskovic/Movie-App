@@ -82,3 +82,9 @@ body {
 .explorebtn:hover {
   opacity: 0.7;
 }
+.modal-transparent{
+  opacity: 0.8;
+}
+.modal-transparent:hover{
+  cursor: pointer;
+}

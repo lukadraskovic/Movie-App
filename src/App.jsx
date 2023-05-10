@@ -5,8 +5,9 @@ import MovieResults from "./Components/MovieResults";
 import "./index.css";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
-import HighestRated from "./Components/HighestRated";
+import Popular from "./Components/Popular";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HighestRated from "./Components/HighestRated";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -90,7 +91,10 @@ function App() {
   path="/highest-rated"
   element={<HighestRated getMovieDetails={getMovieDetails} getMovieData={getMovieData} />}
 />
-
+<Route
+  path="/popular"
+  element={<Popular movies={movies} getMovieDetails={getMovieDetails}/>}
+/>
       </Routes>
       <Footer />
     </Router>

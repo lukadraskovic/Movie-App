@@ -32,9 +32,9 @@ function Movie({ movie, getMovieDetails }) {
           </div>
 
       {movieDetails && (
-        <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal show={showModal} onHide={() => setShowModal(false)} className="modal-transparent">
           <Modal.Header closeButton>
-            <Modal.Title>{movieDetails.Title}</Modal.Title>
+            <Modal.Title className="custom-dark">{movieDetails.Title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="d-flex justify-content-between">

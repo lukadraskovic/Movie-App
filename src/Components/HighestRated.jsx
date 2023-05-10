@@ -1,41 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 
-function HighestRated({getMovieData,getMovieDetails}) {
-  const [movies, setMovies] = useState([]);
+const HighestRated = () => {
+  const [highestRatedMovies, setHighestRatedMovies] = useState([]);
 
   useEffect(() => {
-    async function fetchMovies() {
-      const url = `http://www.omdbapi.com/?apikey=7e698aea&s=&type=movie&r=json&v=1&sort=votes`;
+    async function fetchData() {
+      const url = `https://www.omdbapi.com/?apikey=7e698aea&s=&y=&r=json&type=movie&v=1&sort=imdbRating&tomatoes=false&metacritic=false&imdbRating=9.0`;
       const response = await fetch(url);
-      const responseJSON = await response.json();
-
-      if (responseJSON.Search) {
-        setMovies(responseJSON.Search);
+      const data = await response.json();
+      if (data.Search) {
+        setHighestRatedMovies(data.Search);
       }
     }
-    fetchMovies();
+    fetchData();
   }, []);
 
-  const sortedMovies = movies.sort((a, b) => b.imdbRating - a.imdbRating);
-
   return (
-    <div className="container">
-      <div className="row">
-        {/* {sortedMovies.map((movie) => (
-          <div className="col-md-4" key={movie.imdbID}>
-            <div className="card">
-              <img src={movie.Poster} className="card-img-top" alt={movie.Title} />
-              <div className="card-body">
-                <h5 className="card-title">{movie.Title}</h5>
-                <p className="card-text">Rating: {movie.imdbRating}</p>
-              </div>
-            </div>
-          </div>
-        ))} */}
-        1231123123123123
-      </div>
+    <div>
+      <h2>Highest Rated Movies</h2>
+      {highestRatedMovies.map((movie) => (
+        <div key={movie.imdbID}>
+          <h3>{movie.Title}</h3>
+          <p>Year: {movie.Year}</p>
+          <p>Type: {movie.Type}</p>
+          <p>IMDB Rating: {movie.imdbRating}</p>
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default HighestRated;
+
+  

@@ -46,9 +46,9 @@ function MyNavbar({searchInput, setSearchInput, inputRef}) {
             </Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link bold text-white" href="/">
-              New Releases
-            </a>
+            <Link to="/popular" className="nav-link bold text-white">
+              Popular this week
+            </Link>
           </li>
         </ul>
       </div>
