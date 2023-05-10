@@ -100,17 +100,52 @@ const Popular = ({ getMovieDetails, movie }) => {
         </div>
       </div>
       <Modal show={showModal} onHide={handleCloseModal} className="modal-transparent">
-        <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
         <Modal.Body>
+        <Modal.Header closeButton>
+        <Modal.Title>
+      {movieDetails ? movieDetails.Title : "Loading..."}
+    </Modal.Title>
+          </Modal.Header>
           {movieDetails && (
-            <div>
-              <h3>{movieDetails.Title}</h3>
-              <p>Year: {movieDetails.Year}</p>
-              <p>Type: {movieDetails.Type}</p>
-              <p>Plot: {movieDetails.Plot}</p>
+            <div className="d-flex justify-content-between">
+            <img
+              src={movieDetails.Poster}
+              alt='unavailable'
+              className="mr-4 modal-pic"
+            />
+            <div className="mx-5 h-100">
+              <p className=" border-bottom border-bottom-md-primary">
+                Year: {movieDetails.Year}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Rated: {movieDetails.Rated}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Released: {movieDetails.Released}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Runtime: {movieDetails.Runtime}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Genre: {movieDetails.Genre}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Director: {movieDetails.Director}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Writer: {movieDetails.Writer}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Actors: {movieDetails.Actors}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Plot: {movieDetails.Plot}
+              </p>
+              <p className=" border-bottom border-bottom-md-primary">
+                Rating: {movieDetails.imdbRating}
+              </p>
             </div>
+          </div>
           )}
         </Modal.Body>
         <Modal.Footer>
