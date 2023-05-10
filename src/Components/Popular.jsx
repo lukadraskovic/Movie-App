@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
-import { Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Popular = ({ getMovieDetails, movie }) => {
   const [movies, setMovies] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [movieDetails, setMovieDetails] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -15,7 +14,6 @@ const Popular = ({ getMovieDetails, movie }) => {
         );
         const data = await response.json();
         if (data.Response === "True") {
-          setMovies(data.Search);
           const slicedMovies = data.Search.slice(0, 4);
           setMovies(slicedMovies);
         }
@@ -27,14 +25,9 @@ const Popular = ({ getMovieDetails, movie }) => {
     fetchMovies();
   }, []);
 
-  const handleShowModal = async (movie) => {
+  const handleSelectMovie = async (movie) => {
     const movieDetails = await getMovieDetails(movie.imdbID);
-    setMovieDetails(movieDetails);
-    setShowModal(true);
-  };
-  
-  const handleCloseModal = () => {
-    setShowModal(false);
+    setSelectedMovie(movieDetails);
   };
 
   return (
@@ -59,7 +52,11 @@ const Popular = ({ getMovieDetails, movie }) => {
         <div className="row">
           {movies.map((movie) => (
             <div className="col-md-3" key={movie.imdbID}>
-              <div className="card shadow-sm my-2 bg-transparent">
+              <Link
+                to={`/movie/${movie.imdbID}`}
+                className="card shadow-sm my-2 bg-transparent movie-link"
+                onClick={() => handleSelectMovie(movie)}
+              >
                 <img
                   className="bd-placeholder-img card-img-top"
                   height="225px"
@@ -84,7 +81,6 @@ const Popular = ({ getMovieDetails, movie }) => {
                       <button
                         type="button"
                         className="btn btn-sm btn-outline-secondary"
-                        onClick={() => handleShowModal(movie)}
                       >
                         Show More
                       </button>
@@ -94,66 +90,11 @@ const Popular = ({ getMovieDetails, movie }) => {
                     </small>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
       </div>
-      <Modal show={showModal} onHide={handleCloseModal} className="modal-transparent">
-        <Modal.Body>
-        <Modal.Header closeButton>
-        <Modal.Title>
-      {movieDetails ? movieDetails.Title : "Loading..."}
-    </Modal.Title>
-          </Modal.Header>
-          {movieDetails && (
-            <div className="d-flex justify-content-between">
-            <img
-              src={movieDetails.Poster}
-              alt='unavailable'
-              className="mr-4 modal-pic"
-            />
-            <div className="mx-5 h-100">
-              <p className=" border-bottom border-bottom-md-primary">
-                Year: {movieDetails.Year}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Rated: {movieDetails.Rated}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Released: {movieDetails.Released}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Runtime: {movieDetails.Runtime}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Genre: {movieDetails.Genre}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Director: {movieDetails.Director}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Writer: {movieDetails.Writer}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Actors: {movieDetails.Actors}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Plot: {movieDetails.Plot}
-              </p>
-              <p className=" border-bottom border-bottom-md-primary">
-                Rating: {movieDetails.imdbRating}
-              </p>
-            </div>
-          </div>
-          )}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="dark" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 };
