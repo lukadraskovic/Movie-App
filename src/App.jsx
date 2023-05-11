@@ -94,7 +94,7 @@ function App() {
 />
 <Route
   path="/popular"
-  element={<Popular movies={movies} getMovieDetails={getMovieDetails}/>}
+  element={<Popular movies={movies} getMovieDetails={getMovieDetails} searchInput={searchInput} getSimilarMovieData/>}
 />
 <Route path="/movie/:imdbID" Component={MovieDetails}/>
       </Routes>

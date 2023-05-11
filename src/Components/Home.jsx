@@ -16,7 +16,7 @@ function Home({ handleClick }) {
         );
         const data = await response.json();
         if (data && data.Search && data.Search.length > 0) {
-          setMovieData(data.Search[0]); // Uzmi samo prvi film iz rezultata pretrage
+          setMovieData(data.Search[0]); 
         }
       } catch (error) {
         console.log("Error fetching movie data", error);
