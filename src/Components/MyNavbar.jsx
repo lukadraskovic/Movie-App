@@ -33,19 +33,19 @@ function MyNavbar({searchInput, setSearchInput, inputRef}) {
           ref={inputRef}
         />
       </form>
-      <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active">
-            <a class="nav-link bold color-primary" href="/">
+      <div className="collapse navbar-collapse justify-content-center">
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item active">
+            <a className="nav-link bold color-primary" href="/">
               Home
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link to="/highest-rated" className="nav-link bold text-white">
               Highest Rated
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <Link to="/popular" className="nav-link bold text-white">
               Popular this week
             </Link>
