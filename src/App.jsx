@@ -90,7 +90,7 @@ function App() {
         />
 <Route
   path="/highest-rated"
-  element={<HighestRated movies={movies} getMovieDetails={getMovieDetails} getMovieData={getMovieData} />}
+  element={<HighestRated movies={movies} searchInput={searchInput} getMovieDetails={getMovieDetails} getMovieData={getMovieData} />}
 />
 <Route
   path="/popular"
