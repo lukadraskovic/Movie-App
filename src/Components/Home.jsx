@@ -1,12 +1,30 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect } from "react";
 import heroIlustration from "../Images/hero-section-ilustration.png";
 
-function Home({handleClick}) {
+function Home({ handleClick }) {
   const subtitle = {
     maxWidth: 450,
     marginTop: 10,
   };
-  
+  const [movieData, setMovieData] = useState(null);
+
+  useEffect(() => {
+    const fetchMovieData = async () => {
+      try {
+        const response = await fetch(
+          "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=oppenheimer&y=2023"
+        );
+        const data = await response.json();
+        if (data && data.Search && data.Search.length > 0) {
+          setMovieData(data.Search[0]); // Uzmi samo prvi film iz rezultata pretrage
+        }
+      } catch (error) {
+        console.log("Error fetching movie data", error);
+      }
+    };
+
+    fetchMovieData();
+  }, []);
 
   return (
     <div>
@@ -22,7 +40,10 @@ function Home({handleClick}) {
               </p>
               <div className="d-flex">
                 <div className="p-2">
-                  <button className="btn btn-primary explorebtn transition" onClick={handleClick}>
+                  <button
+                    className="btn btn-primary explorebtn transition"
+                    onClick={handleClick}
+                  >
                     Explore the Platform
                   </button>
                 </div>
@@ -63,6 +84,44 @@ function Home({handleClick}) {
             of the silver screen like never before. At Silver Screenings, the
             show never ends!
           </p>
+        </div>
+        <h2 className="p-2">Upcoming Movie:</h2>
+        <div className="container-fluid">
+          {movieData && (
+            <div class="card mb-3 my-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src={movieData.Poster}
+                    class="img-fluid rounded-start"
+                    alt="Oppenheimer poster"
+                  />
+                </div>
+                <div class="col-sm-12 col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">{movieData.Title}</h5>
+                    <p class="card-text text-dark">
+                      Get ready to be captivated by "Oppenheimer," the upcoming
+                      film that unveils the extraordinary life of J. Robert
+                      Oppenheimer, the mastermind behind the creation of the
+                      atomic bomb. Brace yourself for a gripping tale of
+                      scientific brilliance, moral dilemmas, and the weight of
+                      unleashing unprecedented power on the world stage.
+                    </p>
+                    <div className="container">
+                      <iframe
+                        className="embed-responsive-item"
+                        src="https://www.youtube.com/embed/uYPbbksJxIg"
+                        title="Oppenheimer Trailer"
+                        allowFullScreen
+                        style={{ width: "100%", height: "350px" }}
+                        ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
