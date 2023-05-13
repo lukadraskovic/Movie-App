@@ -125,37 +125,39 @@
                 </div>
               )}
             </div>
-            <div className="container">
+            
+            <div className="container py-5">
+              
         <h2 className="my-2">Frequently Asked Questions:</h2>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item">
-        <p class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <div className="accordion accordion-flush" id="accordionFlushExample">
+      <div className="accordion-item">
+        <p className="accordion-header" id="flush-headingOne">
+          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
           How often are new movies added to the website?
                     </button>
         </p>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">We strive to keep our movie collection up-to-date and diverse. New movies are added regularly to ensure that our users have access to the latest releases. Our team works diligently to curate and add new titles from various genres, including blockbusters, independent films, and international cinema. You can stay informed about new movie additions by subscribing to our newsletter or following our social media channels.</div>
+        <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div className="accordion-body">We strive to keep our movie collection up-to-date and diverse. New movies are added regularly to ensure that our users have access to the latest releases. Our team works diligently to curate and add new titles from various genres, including blockbusters, independent films, and international cinema. You can stay informed about new movie additions by subscribing to our newsletter or following our social media channels.</div>
         </div>
       </div>
-      <div class="accordion-item">
-        <p class="accordion-header" id="flush-headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+      <div className="accordion-item">
+        <p className="accordion-header" id="flush-headingTwo">
+          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
           Can I watch movies directly on the website?
           </button>
         </p>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Our website is primarily a movie database and information platform. While we provide in-depth information about movies, we do not host or stream movies directly on our site.</div>
+        <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div className="accordion-body">Our website is primarily a movie database and information platform. While we provide in-depth information about movies, we do not host or stream movies directly on our site.</div>
         </div>
       </div>
-      <div class="accordion-item">
-        <p class="accordion-header" id="flush-headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          How often is the movie data updated on the website?
+      <div className="accordion-item">
+        <p className="accordion-header" id="flush-headingThree">
+          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          What type of movie data is available on the website?
           </button>
         </p>
-        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">We strive to provide the most up-to-date movie data on our website. Our database is regularly updated with new movie releases and information. We aim to ensure that you have access to the latest information about your favorite movies. However, please note that there may be a slight delay in updating data for newly released movies.</div>
+        <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">The website provides a comprehensive database of movies, including details such as titles, genres, release dates, cast and crew information.</div>
         </div>
       </div>
             </div>
