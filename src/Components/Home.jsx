@@ -85,8 +85,8 @@ function Home({ handleClick }) {
             show never ends!
           </p>
         </div>
-        <h2 className="p-2">Upcoming Movie:</h2>
-        <div className="container-fluid">
+        <h2 className="p-2">Highly Anticipated Movie:</h2>
+        <div className="container-fluid my-2">
           {movieData && (
             <div class="card mb-3 my-3">
               <div class="row g-0">
