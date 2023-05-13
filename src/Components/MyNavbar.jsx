@@ -113,8 +113,8 @@ function MyNavbar({ searchInput, setSearchInput, inputRef }) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/popular" className="nav-link bold text-white">
-              Popular this week
+            <Link to="/featured" className="nav-link bold text-white">
+               Featured
             </Link>
           </li>
         </ul>
