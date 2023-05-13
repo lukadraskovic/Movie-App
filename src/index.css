@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root {
   --color-primary: #db0549;
   --color-primary-darker: #82042c;
@@ -20,7 +21,14 @@ body {
   padding-bottom: 100px;
   min-height: 100vh;
 }
+p {
+  font-family: 'PT Sans', sans-serif;
+}
 
+
+h2{
+  font-family: 'Bebas Neue', sans-serif;
+}
 .card {
   opacity: 0.9;
   transition: transform 0.3s ease-in-out;
@@ -88,4 +96,10 @@ body {
 }
 .movie-link{
   text-decoration: none !important;
+}
+
+.accordion-body{
+  opacity: 0.7;
+  background-color: var(--color-light-gray);
+  color: black;
 }
