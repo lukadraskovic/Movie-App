@@ -87,7 +87,7 @@
                   show never ends!
                 </p>
               </div>
-              <h2 className="p-2 container">Must-Watch Movie of the Year:</h2>
+              <h2 className="container">Must-Watch Movie of the Year:</h2>
               <p className="container">Experience the cinematic event of the year with our "Must-Watch Movie of the Year." This highly anticipated film is poised to captivate audiences with its compelling storyline, exceptional performances, and awe-inspiring visuals. From the first frame to the closing credits, immerse yourself in a world of gripping suspense, heartfelt emotions, and unforgettable moments. Be prepared to be transported into an extraordinary cinematic journey that will keep you on the edge of your seat and leave an indelible mark. Don't miss this remarkable movie that is destined to become a timeless classic. Grab your popcorn, find a comfortable seat, and embrace the magic of the silver screen with our must-watch movie of the year</p>
               <div className="container-fluid my-2">
                 {movieData && (

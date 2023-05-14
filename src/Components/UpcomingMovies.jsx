@@ -42,14 +42,20 @@ const UpcomingMovies = () => {
   return (
     <div className='container'>
       <h2 className='py-2'>Upcoming Movies:</h2>
-      <p className='pb-2'>Film enthusiasts can anticipate an exhilarating lineup of upcoming movies in the near future. One highly anticipated release is "Across the Spider-Verse," the much-awaited sequel to the critically acclaimed animated film "Spider-Man: Into the Spider-Verse." This sequel promises to expand the multiverse of Spider-Men and Spider-Women, delivering stunning animation, thrilling action, and a captivating storyline.
+      <p className='pb-2'>Film enthusiasts can anticipate an exhilarating lineup of upcoming movies in the near future. One highly anticipated release is "Across the Spider-Verse," the much-awaited sequel to the critically acclaimed animated film "Spider-Man: Into the Spider-Verse." This sequel promises to expand the multiverse of Spider-Men and Spider-Women, delivering stunning animation, thrilling action, and a captivating storyline.</p>
+<p>
 
 Another exciting film on the horizon is "Dune Part 2," the continuation of the epic science fiction saga based on Frank Herbert's novel. Building upon the mesmerizing world and intricate plot established in the first installment, this sequel will delve deeper into the political intrigue, rich mythology, and breathtaking visuals that have enthralled audiences.
+</p>
+<p>
 
 Fans of the "Transformers" franchise will be thrilled with "Transformers: Rise of the Beasts." This latest installment takes the beloved Autobots and Decepticons in a new direction by introducing iconic characters from the "Beast Wars" era. Expect spectacular battles, awe-inspiring transformations, and a fresh twist on the beloved robotic universe.
+</p>
+<p>
 
 Meanwhile, the adventures of the iconic archaeologist continue in "Indiana Jones: The Dial of Destiny." This new chapter in the beloved franchise promises thrilling escapades, ancient mysteries, and pulse-pounding action as Indiana Jones embarks on a quest to uncover the secrets of the enigmatic Dial of Destiny.
-
+</p>
+<p>
 With a diverse range of genres and captivating storylines, these upcoming movies are set to enthrall audiences, transporting them to worlds filled with superheroes, intergalactic conflicts, ancient secrets, and timeless adventures. Get ready to be swept away by the magic of cinema as these films bring imagination to life on the silver screen.</p>
       <div className="row">
       {movies.map(movie => (
