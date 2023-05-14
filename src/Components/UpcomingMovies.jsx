@@ -32,7 +32,7 @@ const UpcomingMovies = () => {
 
         setMovies(moviesData);
       } catch (error) {
-        console.log("Greška prilikom dohvata podataka:", error);
+        console.log("Error:", error);
       }
     };
 
