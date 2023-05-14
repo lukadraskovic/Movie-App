@@ -100,7 +100,6 @@ h2{
 .accordion-button{
   background-color: darkgrey !important;
   color:black !important;
-  outline: 1px solid black;
 }
 
 .accordion-body{

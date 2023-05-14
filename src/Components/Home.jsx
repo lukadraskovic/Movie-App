@@ -101,8 +101,8 @@
                     </div>
                     <div className="col-sm-12 col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title text-dark">{movieData.Title}</h5>
-                        <p className="card-text text-dark">
+                        <h5 className="card-title text-dark container">{movieData.Title}</h5>
+                        <p className="card-text text-dark container">
                           Get ready to be captivated by "Oppenheimer," the upcoming
                           film that unveils the extraordinary life of J. Robert
                           Oppenheimer, the mastermind behind the creation of the
