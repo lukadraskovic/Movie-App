@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root {
@@ -21,11 +22,13 @@ body {
   padding-bottom: 100px;
   min-height: 100vh;
 }
-p {
+p, li {
   font-family: 'PT Sans', sans-serif;
 }
 
-
+.navbar-brand{
+  font-family: 'Berkshire Swash', cursive;
+}
 h2{
   font-family: 'Bebas Neue', sans-serif;
 }
