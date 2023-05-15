@@ -5,10 +5,10 @@ const UpcomingMovies = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-      const apiUrl1 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=dune&y=2023";
-      const apiUrl2 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=indiana,jones&y=2023";
-      const apiUrl3 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=spider-verse&y=2023";
-      const apiUrl4 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=transformers,rise&y=2023";
+    const apiUrl1 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=spider-verse&y=2023";
+      const apiUrl2 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=dune&y=2023";
+      const apiUrl3 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=transformers,rise&y=2023";
+      const apiUrl4 = "https://www.omdbapi.com/?apikey=7e698aea&type=movie&s=indiana,jones&y=2023";
     const fetchMovies = async () => {
       try {
         const response1 = await fetch(apiUrl1);
@@ -55,11 +55,10 @@ Fans of the "Transformers" franchise will be thrilled with "Transformers: Rise o
 
 Meanwhile, the adventures of the iconic archaeologist continue in "Indiana Jones: The Dial of Destiny." This new chapter in the beloved franchise promises thrilling escapades, ancient mysteries, and pulse-pounding action as Indiana Jones embarks on a quest to uncover the secrets of the enigmatic Dial of Destiny.
 </p>
-<p>
-With a diverse range of genres and captivating storylines, these upcoming movies are set to enthrall audiences, transporting them to worlds filled with superheroes, intergalactic conflicts, ancient secrets, and timeless adventures. Get ready to be swept away by the magic of cinema as these films bring imagination to life on the silver screen.</p>
+
       <div className="row">
       {movies.map(movie => (
-          <div className='col-md-3' key={movie.imdbID}>
+          <div className='col-md-3 upcoming' key={movie.imdbID}>
           <img src={movie.Poster} alt={movie.Title}  className='bd-placeholder-img card-img-top' height='225px'/>
           <h2 className='text-center py-1'>{movie.Title}</h2>
           <p className='text-center'>{movie.Year}</p>
