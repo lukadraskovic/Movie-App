@@ -41,7 +41,7 @@
                       movie obsession.  
                     </p>
                     <div className="d-flex">
-                      <div className="p-2">
+                      <div className="p-2 d-none d-lg-block">
                         <button
                           className="btn btn-primary exploreBtn"
                           onClick={handleClick}
@@ -93,14 +93,14 @@
                 {movieData && (
                   <div className="card mb-3 my-3">
                     <div className="row g-0">
-                      <div className="col-md-4">
+                      <div className="col-md-4 d-none d-lg-block">
                         <img
                           src={movieData.Poster}
                           className="img-fluid rounded-start"
                           alt="Oppenheimer poster"
                         />
                       </div>
-                      <div className="col-sm-12 col-md-8">
+                      <div className="col-sm-12 col-md-12 col-lg-8">
                         <div className="card-body">
                           <h5 className="card-title text-dark container">{movieData.Title}</h5>
                           <p className="card-text text-dark container">
