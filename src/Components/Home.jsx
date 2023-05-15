@@ -54,7 +54,7 @@
                 </div>
 
                 <div className="col-md-6">
-                  <img src={heroIlustration} className="w-100" />
+                  <img src={heroIlustration} alt="hero-img" className="w-100" />
                 </div>
               </div>
 

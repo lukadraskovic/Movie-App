@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "../index.css";
 
 function MyNavbar({ searchInput, setSearchInput, inputRef }) {
@@ -13,11 +13,13 @@ function MyNavbar({ searchInput, setSearchInput, inputRef }) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+
+
   return (
     <nav className="navbar px-4 navbar-expand-lg navbar-dark shadow bg-custom-dark">
-      <a className="navbar-brand p-2" href="/">
+      <Link className="navbar-brand p-2 color-primary" to="/">
         SilverScreen
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -30,10 +32,10 @@ function MyNavbar({ searchInput, setSearchInput, inputRef }) {
         className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
         id="navbarNav"
       >
-        <form onSubmit={handleSubmit} id="search-input-form">
+        <form onSubmit={handleSubmit} id="search-input-form" className='w-100'>
           <input
             type="text"
-            className="bg-white form-control rounded-lg w-100 p-2 px-3"
+            className="bg-white form-control rounded-lg p-2 px-3"
             placeholder="Search..."
             aria-label="Search"
             value={searchInput}
@@ -42,10 +44,10 @@ function MyNavbar({ searchInput, setSearchInput, inputRef }) {
           />
         </form>
         <ul className="navbar-nav ms-auto">
-          <li className="nav-item active">
-            <a className="nav-link bold color-primary" href="/">
+        <li className="nav-item">
+            <Link to="/" className="nav-link bold text-white">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/highest-rated" className="nav-link bold text-white">
