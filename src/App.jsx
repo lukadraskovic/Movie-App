@@ -83,7 +83,7 @@
           <Route
             path="/"
             element={
-              showResults ? (
+              showResults && searchInput !== ''? (
                 <MovieResults
                   movies={movies}
                   similarMovies={similarMovies}
