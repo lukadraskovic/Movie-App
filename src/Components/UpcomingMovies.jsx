@@ -60,8 +60,8 @@ Meanwhile, the adventures of the iconic archaeologist continue in "Indiana Jones
       {movies.map(movie => (
           <div className='col-md-3 upcoming' key={movie.imdbID}>
           <img src={movie.Poster} alt={movie.Title}  className='bd-placeholder-img card-img-top' height='225px'/>
-          <h2 className='text-center py-1'>{movie.Title}</h2>
-          <p className='text-center'>{movie.Year}</p>
+          <h2 className='text-center py-1 h-25'>{movie.Title}</h2>
+          <p className='text-center d-none d-md-block'>{movie.Year}</p>
         </div>
       ))}
       </div>
