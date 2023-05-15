@@ -20,9 +20,9 @@ function MyNavbar({ searchInput, setSearchInput, inputRef }) {
 
   return (
     <nav className="navbar px-4 navbar-expand-lg navbar-dark shadow bg-custom-dark">
-      <Link className="navbar-brand p-2 color-primary" to="/">
+      <a className="navbar-brand p-2 color-primary" href="/">
         SilverScreen
-      </Link>
+      </a>
       <button
         className="navbar-toggler"
         type="button"
