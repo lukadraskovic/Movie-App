@@ -85,12 +85,8 @@ h2{
   background-color: var(--color-primary) !important;
   border: none !important;
 }
-.explorebtn {
-  opacity: 1;
-  transition:  0.3s ease-in-out;
-}
 
-.explorebtn:hover {
+.exploreBtn:hover {
   opacity: 0.7;
 }
 .modal-transparent{

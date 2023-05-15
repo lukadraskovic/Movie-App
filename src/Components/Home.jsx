@@ -21,7 +21,7 @@
                 setMovieData(data.Search[0]); 
               }
             } catch (error) {
-              console.log("Error fetching movie data", error);
+              console.log("Error:", error);
             }
           };
 
@@ -43,7 +43,7 @@
                     <div className="d-flex">
                       <div className="p-2">
                         <button
-                          className="btn btn-primary explorebtn transition"
+                          className="btn btn-primary exploreBtn"
                           onClick={handleClick}
                         >
                           Discover Movies
@@ -158,7 +158,7 @@
             </button>
           </p>
           <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">The website provides a comprehensive database of movies, including details such as titles, genres, release dates, cast and crew information.</div>
+            <div className="accordion-body">The website provides a comprehensive database of movies, including details such as titles, genres, release dates, cast and crew information.</div>
           </div>
         </div>
               </div>
