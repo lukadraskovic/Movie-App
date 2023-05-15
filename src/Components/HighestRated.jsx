@@ -6,8 +6,7 @@ const HighestRated = ({ searchInput }) => {
   const [movies, setMovies] = useState([]);
 
   const fetchMovieData = async (title) => {
-    const apiKey = "7e698aea";
-    const response = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=${apiKey}`);
+    const response = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=7e698aea`);
     const movieData = await response.json();
     return movieData;
   };
@@ -94,4 +93,3 @@ const HighestRated = ({ searchInput }) => {
 };
 
 export default HighestRated;
-
