@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import '../index.css';
 
-const HighestRated = ({ searchInput }) => {
+const HighestRated = () => {
   const [movies, setMovies] = useState([]);
 
   const fetchMovieData = async (title) => {
@@ -34,34 +34,16 @@ const HighestRated = ({ searchInput }) => {
     fetchMovies();
   }, []);
 
-  useEffect(() => {
-    const searchMovies = async () => {
-      if (searchInput === "") {
-        fetchMovies();
-      } else {
-        const movieData = await fetchMovieData(searchInput);
-        if (movieData.Response === "True") {
-          setMovies([movieData]);
-        } else {
-          setMovies([]);
-        }
-      }
-    };
-
-    searchMovies();
-  }, [searchInput]);
-
   return (
     <div className="container">
       <div className="row">
-        {searchInput.length === 0 && (
           <>
             <h2 className="text-light p-2 my-4">Highest Rated Movies:</h2>
             <p className="text-light">
               Highest rated movies are the cream of the crop in the world of cinema, representing the pinnacle of storytelling, acting, and filmmaking. These movies have captivated audiences and critics alike, standing the test of time and leaving an indelible mark on the film industry. With exceptional narratives, memorable characters, and masterful direction, highest rated movies have the power to transport viewers to different worlds, evoke a range of emotions, and provoke thought-provoking discussions. From timeless classics like "The Shawshank Redemption" and "The Godfather" to modern masterpieces like "The Dark Knight" and "Inception," these films have earned their acclaim through their exceptional craftsmanship, compelling narratives, and their ability to resonate with audiences across generations. Highest rated movies not only entertain but also inspire, challenge conventions, and leave a lasting impact on those fortunate enough to experience them.
             </p>
           </>
-        )}
+        
 
         {movies.map((movie) => (
           <div className="col-md-3" key={movie.imdbID}>
