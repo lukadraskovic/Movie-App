@@ -46,7 +46,7 @@
                           className="btn btn-primary exploreBtn"
                           onClick={handleClick}
                         >
-                          Discover Movies
+                          Start Discovering
                         </button>
                       </div>
                     </div>
